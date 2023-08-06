@@ -27,7 +27,6 @@ class UserController extends Controller
      */
     public function store(StoreUserRequest $request)
     {
-        print_r('govn');
         $validatedRequest = $request->validated();
         $validatedRequest['password'] = Hash::make($request->password);
         $validatedRequest['last_seen'] = now();
